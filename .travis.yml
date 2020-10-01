@@ -1,0 +1,11 @@
+# making use of docker requires super user permissions
+sudo: required
+language: generic
+services:
+    - docker
+
+before_install:
+    - docker build -t nanda1995/docker-CI -f Dockerfile.dev .
+
+script:
+    - docker run -e CI=true nanda1995/docker-CI npm run test
