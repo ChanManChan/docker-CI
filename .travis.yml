@@ -9,3 +9,17 @@ before_install:
 
 script:
     - docker run -e CI=true nanda1995/docker-ci npm run test
+
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-ci"
+    env: "DockerCi-env-1"
+    bucket_name: "elasticbeanstalk-us-east-2-737607483076"
+    bucket_path: "docker-ci"
+    on:
+      branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+# http://dockerci-env-1.eba-knsxpy86.us-east-2.elasticbeanstalk.com/
