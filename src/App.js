@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          NandaGopal testing hot reload testing
+          Nandagopal changed me on the feature branch for some reason
         </a>
       </header>
     </div>
